@@ -12,9 +12,6 @@
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-
-# include <ntsid.h>
-
 # define BUFF_SIZE 1024
 
 typedef struct		s_file
