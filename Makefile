@@ -24,14 +24,23 @@ format_d_i.c format_n.c format_o.c format_p.c format_s.c format_u.c format_x.c))
 
 all: $(NAME)
 $(NAME) : $(OBJECT_DIR) $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo "\033[0;32mlib compiled\033[0m"
 $(OBJECT_DIR):
-	mkdir -p $(OBJECT_DIR)
-	mkdir -p $(OBJECT_DIR)/ft_printf
-	mkdir -p $(OBJECT_DIR)/ft_printf/formats
+	@echo "\033[33mcreating directory for objects...\033[0m"
+	@mkdir -p $(OBJECT_DIR)
+	@mkdir -p $(OBJECT_DIR)/ft_printf
+	@mkdir -p $(OBJECT_DIR)/ft_printf/formats
+	@echo "\033[33mcompiling...\033[0m"
 $(OBJECT_DIR)/%.o: %.c
-	$(CC) $(FLAGS) -o $@ -c $< -I $(INCLUDES)
+	@$(CC) $(FLAGS) -o $@ -c $< -I $(INCLUDES)
+clean:
+	@rm -rf $(OBJECT_DIR)
+	@echo "\033[32mcleaned\033[0m"
+fclean: clean
+	@rm -f $(NAME)
+	@echo "\033[31mlib deleted\033[0m"
 re:
-	rm -rf $(OBJECT_DIR)
-	make	
+	@make fclean
+	@make	
