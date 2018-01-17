@@ -6,7 +6,7 @@
 /*   By: vshkykav <vshkykav@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/12 13:01:00 by vshkykav          #+#    #+#             */
-/*   Updated: 2018/01/12 13:01:00 by vshkykav         ###   ########.fr       */
+/*   Updated: 2018/01/17 16:31:24 by vshkykav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 ** hex max ffff:	1110vvvv 10vvvvvv 10vvvvvv
 ** hex max 1fffff:	11110vvv 10vvvvvv 10vvvvvv 10vvvvvv
 **
- * 123456789
 ** 1100 0000 - 0xC0
 ** 1110 0000 - 0xE0
 ** 1111 0000 - 0xF0
