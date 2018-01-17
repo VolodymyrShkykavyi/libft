@@ -22,7 +22,7 @@ SRC = ft_memalloc.c ft_putstr_fd.c ft_strncat.c ft_memccpy.c ft_putwchar.c ft_st
 	format_d_i.c format_n.c format_o.c format_p.c format_s.c format_u.c format_x.c))
 
 all: $(NAME)
-$(NAME) : $(OBJECT_DIR) $(OBJ)
+$(NAME): $(OBJECT_DIR) $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 	@tput cuu 1 && tput el && tput cnorm
@@ -45,4 +45,4 @@ fclean: clean
 	@echo "\033[31mlib deleted\033[0m"
 re:
 	@make fclean
-	@make	
+	@make
