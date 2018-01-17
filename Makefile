@@ -25,13 +25,14 @@ all: $(NAME)
 $(NAME) : $(OBJECT_DIR) $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
-	@tput cuu 1 && tput el
+	@tput cuu 1 && tput el && tput cnorm
 	@echo "\033[0;32mlib compiled\033[0m"
 $(OBJECT_DIR):
 	@mkdir -p $(OBJECT_DIR)
 	@mkdir -p $(OBJECT_DIR)/ft_printf
 	@mkdir -p $(OBJECT_DIR)/ft_printf/formats
 	@echo "\033[33mcompiling...\033[0m"
+	@tput civis
 $(OBJECT_DIR)/%.o: %.c
 	@echo "\033[33mtarget: $@"
 	@$(CC) $(FLAGS) -o $@ -c $< -I $(INCLUDES)
