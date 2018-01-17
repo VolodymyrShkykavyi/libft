@@ -25,10 +25,9 @@ all: $(NAME)
 $(NAME) : $(OBJECT_DIR) $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
-	@tput cuu 2 && tput ed
+	@tput cuu 1 && tput el
 	@echo "\033[0;32mlib compiled\033[0m"
-$(OBJECT_DIR): 
-	@echo "\033[33mcreating directory for objects...\033[0m"
+$(OBJECT_DIR):
 	@mkdir -p $(OBJECT_DIR)
 	@mkdir -p $(OBJECT_DIR)/ft_printf
 	@mkdir -p $(OBJECT_DIR)/ft_printf/formats
@@ -36,7 +35,7 @@ $(OBJECT_DIR):
 $(OBJECT_DIR)/%.o: %.c
 	@echo "\033[33mtarget: $@"
 	@$(CC) $(FLAGS) -o $@ -c $< -I $(INCLUDES)
-	@tput cuu 1 && tput ed
+	@tput cuu 1 && tput el
 clean:
 	@rm -rf $(OBJECT_DIR)
 	@echo "\033[32mcleaned\033[0m"
